@@ -46,7 +46,6 @@ var app = {
                 "senderID": "175807485173"
             },
             "browser": {
-				pushServiceURL: 'http://alhoward-no.ip.biz/pnfw/register'
 			},
             "ios": {
                 "sound": true,
@@ -65,6 +64,18 @@ var app = {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
+                 var xhr = new XMLHttpRequest();
+                 var url = "http://alhoward.no-ip.biz/pnfw/register";
+                 var data = "token=" + data.registrationId + "&os=Android";
+                 xhr.open("POST", url, true);
+                 xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                 xhr.onreadystatechange = function () {
+                     if (xhr.readyState == 4 && xhr.status == 200) {
+                         // do something with response
+                         console.log(xhr.responseText);
+                     }
+                };
+                xhr.send(data);
             }
 
             var parentElement = document.getElementById('registration');
