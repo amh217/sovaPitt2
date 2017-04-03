@@ -64,6 +64,8 @@ var app = {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
+				
+				//Code from http://stackoverflow.com/questions/24888024/using-javascript-to-submit-a-post-request-to-a-server and modified by me -- amh217
                  var xhr = new XMLHttpRequest();
                  var url = "http://alhoward.no-ip.biz/pnfw/register";
                  var data = "token=" + data.registrationId + "&os=Android";
