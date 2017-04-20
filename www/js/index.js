@@ -1,3 +1,5 @@
+//Code generated and modified by Allen Howard, Aaron Kircher, Sang (Vivianna) Lee, Miranda Wayne for Application Development for Mobile Devices
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,6 +45,7 @@ var app = {
         console.log('calling push init');
         var push = PushNotification.init({
             "android": {
+                //This will need changed for real SOVA people.
                 "senderID": "175807485173"
             },
             "browser": {
@@ -67,7 +70,9 @@ var app = {
 				
 				//Code from http://stackoverflow.com/questions/24888024/using-javascript-to-submit-a-post-request-to-a-server and modified by me -- amh217
                  var xhr = new XMLHttpRequest();
+                //This line will need changed for the proper server.
                  var url = "http://alhoward.no-ip.biz/pnfw/register";
+                //This will need changed for iOS.
                  var data = "token=" + data.registrationId + "&os=Android";
                  xhr.open("POST", url, true);
                  xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
